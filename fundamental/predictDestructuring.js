@@ -36,14 +36,14 @@
 // console.log(first == third);
 
 
-const lastTest={
+const lastTest = {
     key: 'value',
-    secondKey : 'ramy'
+    secondKey: [1, 5, 1, 8, 3, 3]
 }
-const {key} = lastTest;
-const{secondKey} = lastTest;
-// const [,willThisWork]=lastTest;
+const { key } = lastTest;
+const { secondKey } = lastTest;
+const [ ,willThisWork] = secondKey;
 console.log(key);
 console.log(secondKey);
 console.log(secondKey[0]);
-// console.log(willThisWork);
+console.log(willThisWork);
