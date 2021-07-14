@@ -1,0 +1,18 @@
+import React from 'react';
+class NizForm extends component {    
+        render() {        
+            return (
+                <>
+                <h1>Hello World</h1>                
+                <p>This is a paragraph</p>      
+                <form action="/process" method="post">                
+                    <div class="form-group">                    
+                        <label htmlFor="email">Email:</label>                    
+                        <input type="text" id="email" name="username" class="form-control" />                
+                    </div>            
+                </form>
+                </>      
+            );    
+        }
+    }
+    export default NizForm;
