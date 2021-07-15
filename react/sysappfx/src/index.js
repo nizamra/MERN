@@ -2,10 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import NizForm from './components/someForm'
+import PersonCard from './components/PersonCard'
+import LightSwitch from './components/LightSwitch'
+import MoshMosh from './components/mosh'
+import Counter from './components/counter'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <LightSwitch />
+    <MoshMosh />
+    <Counter />
+    <NizForm textprop={"give back"} />
+    <PersonCard firstName="sam" lastName="amanda" age={13} hairColor="yellow" />
+    <PersonCard firstName="Ahmad" lastName="Rjoob" age={43} hairColor="Black" />
     <App />
   </React.StrictMode>,
   document.getElementById('root')

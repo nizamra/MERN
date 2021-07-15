@@ -2,12 +2,19 @@ import React from 'react';
 // eslint-disable-next-line
 import logo from './logo.svg';
 import './App.css';
+import MyNewComponent from './components/comWithChild';
+
 
 function App() {
   return (
       <div className="App">
       <h1>Hello Dojo</h1>
         <p>Things need to be done</p>
+        <MyNewComponent header={ "Header Prop" }>
+            <p>This is a child</p>
+            <p>This is another child</p>
+            <p>This is even another child</p>
+        </MyNewComponent>  
         <ul>
           <li>Learn React</li>
           <li>Climb Mt.Everest</li>
@@ -20,7 +27,7 @@ function App() {
                     <input type="text" id="email" name="username" class="form-control" />                
                 </div>            
             </form>
-      {/* <header className="App-header">
+      <header className="App-header">
          <img src={logo} className="App-logo" alt="logo" /> 
         <img src="https://cdn.hackernoon.com/images/1*KBGdMaU_emZX4XR1AvkD4A.gif" className="App-logo" alt="logo" />
         <p>
@@ -34,7 +41,7 @@ function App() {
         >
           Learn React
         </a>
-      </header> */}
+      </header>
     </div>
   );
 }
