@@ -1,3 +1,4 @@
+import Ninja from './creatingNinjas.mjs';
 class Sensei extends Ninja{
     constructor(z){
         super(z);
