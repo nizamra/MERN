@@ -7,6 +7,8 @@ import MessageForm from './components/MessageForm';
 import MessageDisplay from './components/DisplayMessages'
 import BoxForm from './components/BoxForm';
 import BoxDisplay from './components/DisplayBox'
+import TheRedAlert from './components/RedAlert'
+import Tabss from './components/TabsatForYou'
 
 
 function App() {
@@ -27,6 +29,12 @@ function App() {
       <fieldset>
         <BoxForm onNewColorInput={newBoxMade} />
         <BoxDisplay everybox={color} />
+      </fieldset>
+      <fieldset>
+        < TheRedAlert generals={["Muses", "Hani", "Omar", "Jouri"]} />
+      </fieldset>
+      <fieldset>
+        < Tabss howManyDoYouWant={6} />
       </fieldset>
       <h1>Hello Dojo</h1>
       <p>Things need to be done</p>
