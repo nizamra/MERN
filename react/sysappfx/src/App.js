@@ -1,14 +1,25 @@
 import React from 'react';
+import { Router } from '@reach/router';
 // eslint-disable-next-line
 import logo from './logo.svg';
 import './App.css';
 import MyNewComponent from './components/comWithChild';
 import MessageForm from './components/MessageForm';
-import MessageDisplay from './components/DisplayMessages'
+import MessageDisplay from './components/DisplayMessages';
 import BoxForm from './components/BoxForm';
-import BoxDisplay from './components/DisplayBox'
-import TheRedAlert from './components/RedAlert'
-import Tabss from './components/TabsatForYou'
+import BoxDisplay from './components/DisplayBox';
+import TheRedAlert from './components/RedAlert';
+import Abbas from './components/TabsatForYou';
+import Ragad from './components/AboutPromises';
+import Abbas3la from './components/FetchingAPIpokemons';
+import Wadeeee3 from './components/FetchingAPIpokemonsWithHamarsheh';
+import MohRaddad from './components/AxiosApiPokimons';
+import HaneenS from './components/NavBar';
+import DetailComponent from './components/DetailComponent';
+import HomerSipson from './components/HomerSipson';
+import IdealForOmar from './components/IdealForOmar';
+import HelloAdele from './components/HelloAdele';
+import CollersOfRainbow from './components/CollersOfRainbow';
 
 
 function App() {
@@ -22,6 +33,17 @@ function App() {
   }
   return (
     <div className="App">
+      <Router>
+        <DetailComponent path="/extreme/:id" />
+        <HomerSipson path="/home" />
+        <IdealForOmar path="/:id" />
+        <HelloAdele path="/hello" />
+        <CollersOfRainbow path="/hello/:color/:coller" />
+        {/* <DashboardComponent path="/dashboard" /> */}
+      </Router>
+      <fieldset>
+        <HaneenS />
+      </fieldset>
       <fieldset>
         <MessageForm onNewMessage={youveGotMail} />
         <MessageDisplay message={currentMsg} />
@@ -34,8 +56,21 @@ function App() {
         < TheRedAlert generals={["Muses", "Hani", "Omar", "Jouri"]} />
       </fieldset>
       <fieldset>
-        < Tabss howManyDoYouWant={6} />
+        < Abbas howManyDoYouWant={6} />
       </fieldset>
+      <fieldset>
+        < Ragad />
+      </fieldset>
+      <fieldset>
+        < Abbas3la />
+      </fieldset>
+      <fieldset>
+        < Wadeeee3 />
+      </fieldset>
+      <fieldset>
+        < MohRaddad />
+      </fieldset>
+
       <h1>Hello Dojo</h1>
       <p>Things need to be done</p>
       <MyNewComponent header={"Header Prop"}>
