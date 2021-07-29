@@ -11,10 +11,10 @@ export default class MoshMosh extends React.Component {
     render() {
         
         return (
-            <>
+            <fieldset>
                 <img src={this.state.iamgest} alt="noth" />
                 <p>Count: <span> {this.writeZero()}</span></p>
-            </>
+            </fieldset>
         );
     }
 }
