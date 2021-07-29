@@ -9,9 +9,6 @@ const Tamara = props => {
     return (
         <>
         <p>here is the numper you've choosen {props.id}</p>
-        {/* {peoples.map((person, index)=>{
-            return (<h4 key={index}>{person.name}</h4>)
-        })} */}
         {peoples.name}
         {peoples.height}
         {peoples.skin_color}

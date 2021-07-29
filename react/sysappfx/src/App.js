@@ -21,6 +21,8 @@ import IdealForOmar from './components/IdealForOmar';
 import HelloAdele from './components/HelloAdele';
 import CollersOfRainbow from './components/CollersOfRainbow';
 import AmalHayati from './components/LukeFalafelSpace';
+import DoingForm from './components/TodoListingsForF';
+import DoingDisplay from './components/DisplayTodo';
 
 
 function App() {
@@ -31,6 +33,10 @@ function App() {
   const [color, setColor] = React.useState([]);
   const newBoxMade = (newColor) => {
     setColor([...color, newColor]);
+  }
+  const [fretos, setFretos] = React.useState([]);
+  const newFreeTodo = (newColor) => {
+    setFretos([...fretos, newColor]);
   }
   return (
     <div className="App">
@@ -55,6 +61,11 @@ function App() {
       <fieldset>
         <BoxForm onNewColorInput={newBoxMade} />
         <BoxDisplay everybox={color} />
+      </fieldset>
+      <fieldset>
+        <p>Abo Hashish in the house</p>
+        <DoingForm onNewColorInput={newFreeTodo} />
+        <DoingDisplay everybox={fretos} />
       </fieldset>
       <fieldset>
         < TheRedAlert generals={["Muses", "Hani", "Omar", "Jouri"]} />
