@@ -20,6 +20,7 @@ import HomerSipson from './components/HomerSipson';
 import IdealForOmar from './components/IdealForOmar';
 import HelloAdele from './components/HelloAdele';
 import CollersOfRainbow from './components/CollersOfRainbow';
+import AmalHayati from './components/LukeFalafelSpace';
 
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
         <CollersOfRainbow path="/hello/:color/:coller" />
         {/* <DashboardComponent path="/dashboard" /> */}
       </Router>
+      <fieldset>
+        <AmalHayati />
+      </fieldset>
       <fieldset>
         <HaneenS />
       </fieldset>
