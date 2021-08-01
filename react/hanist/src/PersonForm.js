@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-export default () => {
+const PersonForm = () => {
     //keep track of what is being typed via useState hook
     const [firstName, setFirstName] = useState(""); 
     const [lastName, setLastName] = useState("");
@@ -33,3 +33,5 @@ export default () => {
         </form>
     )
 }
+
+export default PersonForm;

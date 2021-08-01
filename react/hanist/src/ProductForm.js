@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-export default () => {
+const ProductForm = () => {
     const [title, setTitle] = useState(""); 
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
@@ -38,3 +38,5 @@ export default () => {
         </>
     )
 }
+
+export default ProductForm;
