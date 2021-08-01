@@ -13,7 +13,7 @@ const Main = () => {
                 setProducts(res.data);
                 setLoaded(true);
             });
-    }, [])
+    }, [products])
     return (
         <div>
             <Papa />
