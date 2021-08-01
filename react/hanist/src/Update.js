@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { navigate } from '@reach/router';
+import { navigate, Link } from '@reach/router';
 export default props => {
     const { id } = props;
     const [title, setTitle] = useState('');
@@ -22,32 +22,35 @@ export default props => {
             description,
         })
             .then(res => console.log(res));
-            navigate('/');
+        navigate('/product/' + id);
     }
     return (
         <div>
+            <Link to={'/product/' + id}>
+                Cancel
+            </Link>
             <h1>Update this Product</h1>
             <form onSubmit={updateProduct}>
                 <p>
                     <label>Title: </label><br />
-                    <input type="text" 
-                    name="title" 
-                    value={title} 
-                    onChange={(e) => { setTitle(e.target.value) }} />
+                    <input type="text"
+                        name="title"
+                        value={title}
+                        onChange={(e) => { setTitle(e.target.value) }} />
                 </p>
                 <p>
                     <label>Price: </label><br />
-                    <input type="text" 
-                    name="price"
-                    value={price} 
-                    onChange={(e) => { setPrice(e.target.value) }} />
+                    <input type="text"
+                        name="price"
+                        value={price}
+                        onChange={(e) => { setPrice(e.target.value) }} />
                 </p>
                 <p>
                     <label>Description: </label><br />
-                    <input type="text" 
-                    name="description"
-                    value={description} 
-                    onChange={(e) => { setDescription(e.target.value) }} />
+                    <input type="text"
+                        name="description"
+                        value={description}
+                        onChange={(e) => { setDescription(e.target.value) }} />
                 </p>
                 <input type="submit" />
             </form>

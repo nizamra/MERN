@@ -10,6 +10,8 @@ const Detail = props => {
     }, [])
     return (
         <div>
+            <Link to={"/"}>Home</Link>
+
             <p>Title: {product.title}</p>
             <p>Price each: {product.price}</p>
             <p>About: {product.description}</p>

@@ -14,12 +14,17 @@ const Main = () => {
                 setLoaded(true);
             });
     }, [products])
+
+    const removeFromDom = productId => {
+        setProducts(products.filter(product => product._id != productId));
+    }
+
     return (
         <div>
             <Papa />
             <Mama />
             <hr />
-            {loaded && <Layth products={products} />}
+            {loaded && <Layth products={products} removeFromDom={removeFromDom} />}
         </div>
     )
 }
