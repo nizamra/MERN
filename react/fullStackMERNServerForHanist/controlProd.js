@@ -8,7 +8,11 @@ module.exports.createProduct = (request, response) => {
         description
     })
         .then(product => response.json(product))
-        .catch(err => response.json(err));
+        .catch(err => {
+            console.log(err);
+            response.status(400).json(err);
+
+        });
 }
 
 module.exports.getAllProducts = (request, response) => {
@@ -24,7 +28,7 @@ module.exports.getProduct = (request, response) => {
 }
 
 module.exports.updateProduct = (request, response) => {
-    Product.findOneAndUpdate({_id: request.params.id}, request.body, {new:true})
+    Product.findOneAndUpdate({_id: request.params.id}, request.body.product, {new:true})
         .then(updatedProduct => response.json(updatedProduct))
         .catch(err => response.json(err))
 }
