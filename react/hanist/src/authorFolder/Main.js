@@ -6,7 +6,7 @@ import AuthorsList from './AuthorsList';
 const Main = () => {
     const [authors, setAuthors] = useState([]);
     const [loaded, setLoaded] = useState(false);
-    const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState();
     useEffect(() => {
         axios.get('http://localhost:8000/api/author')
             .then(res => {
@@ -19,9 +19,11 @@ const Main = () => {
         setAuthors(authors.filter(author => author._id !== authorId));
     }
     const createAuthor = author => {
+        console.log(author)
         axios.post('http://localhost:8000/api/author', author)
             .then(res => {
                 setAuthors([...authors, res.data]);
+                setErrors("");
             })
             .catch(err => {
                 setErrors(err.response.data.errors);
@@ -32,7 +34,7 @@ const Main = () => {
         <div>
             <FormingAnAuthor onSubmitProp={createAuthor} allErrors={errors} initialTitle="" />
             <hr />
-            {loaded && <AuthorsList authors={authors} removeFromDom={removeFromDom} />}
+            {loaded && <AuthorsList authors={authors} setAuthors={setAuthors} removeFromDom={removeFromDom} />}
         </div>
     )
 }

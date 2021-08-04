@@ -8,6 +8,7 @@ module.exports.createAuthor = (request, response) => {
         .then(author => response.json(author))
         .catch(err => {
             console.log(err);
+            console.log("hadeel is here again");
             response.status(400).json(err);
         });
 }

@@ -1,5 +1,9 @@
 import React from 'react'
 import axios from 'axios';
+import { Button } from '@material-ui/core';
+import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
+
+
 const DeleteButton = props => {
     const { authorId, successCallback } = props;
 
@@ -11,9 +15,7 @@ const DeleteButton = props => {
     }
 
     return (
-        <button onClick={deleteAuthor}>
-            Delete
-        </button>
+        <Button id="bu" onClick={deleteAuthor} endIcon={<DeleteForeverOutlinedIcon/>} variant="contained" color="secondary"  />
     )
 }
 export default DeleteButton
