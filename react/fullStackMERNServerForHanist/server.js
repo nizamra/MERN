@@ -14,7 +14,7 @@ const io = require('socket.io')(server, { cors: true });
 
 io.on("connection", socket => {
     console.log("Nice to meet you. (shake hand)");
-    // console.log(socket.id);
+    console.log(socket.id);
     socket.emit("sendingDataToOthers", "Welcoming Reem Ismail");
     // socket.on("clientevent", data => {
     //     socket.broadcast.emet("sendingDataToOthers", data);

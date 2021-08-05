@@ -21,16 +21,17 @@ const AuthorsList = (props) => {
             {authors.map((author, idx) => {
                 return (
                     <>
-                        <Paper elevation={8}>
-                            <p key={idx}>
-                                <Link to={`/author/${author._id}`}>
-                                    {author.name}, {author.createdAt}
+                        <Paper elevation={8} key={idx}>
+                            <p>
+                                Name:<Link to={`/author/${author._id}`}>
+                                    {author.name}
                                 </Link>
-                                |
+                                <p>Created at: {author.createdAt}</p>
+
                                 <Link to={"/author/" + author._id + "/edit"}>
                                     <Button id="bu" type="submit" variant="outlined" endIcon={<CreateOutlinedIcon />} color="primary" />
                                 </Link>
-                                |
+
                                 <DeleteButton authorId={author._id} successCallback={() => removeFromDom(author._id)} />
                             </p>
                         </Paper>

@@ -26,8 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <Chat />
-      {/* <Router>
+      <Router>
         <Main path="/" />
         <Detail path="product/:id" />
         <Update path="product/:id/edit" />
@@ -35,10 +34,12 @@ function App() {
         <MainAuthor path="/author" />
         <DetailAuthor path="author/:id" />
         <UpdateAuthor path="author/:id/edit" />
-      </Router> */}
 
-      {/* <h3>End Main XxX</h3>
-      <Origin /> */}
+        <Chat path="/chat" />
+      </Router>
+
+      <h3>End Main XxX</h3>
+      <Origin />
     </div>
   );
 }

@@ -11,13 +11,14 @@ module.exports.createProduct = (request, response) => {
         .catch(err => {
             console.log(err);
             response.status(400).json(err);
-
         });
 }
 
 module.exports.getAllProducts = (request, response) => {
     Product.find({})
-        .then(products => response.json(products))
+        .then(products => {
+    response.json(products)
+})
         .catch(err => response.json(err))
 }
 

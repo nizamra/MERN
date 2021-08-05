@@ -4,7 +4,7 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         required: [true, "Title is required"],
         minlength: [4, "Title must be at least 4 characters long"]
-      },
+    },
     price: {
         type: Number,
         required: [true, 'You Should give an estimation at least?'],
@@ -13,6 +13,7 @@ const ProductSchema = new mongoose.Schema({
     },
     description: {
         type: String,
+        minlength: [6, "Description must be at least 4 characters long Max 26"],
         unique: [true, "You can't be serious, give a real description man"],
         maxlength: [26, "Description has a limit of 26 characters"]
     }

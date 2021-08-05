@@ -11,8 +11,12 @@ const ProductForm = (props) => {
         onSubmitProp(
             { title, price, description }
         );
+        setTitle("");
+        setPrice("");
+        setDescription("");
     }
-
+    console.log("allErrors inside the form");
+    console.log(allErrors);
     return (
         <>
             <h2>Product Manager</h2>
@@ -23,8 +27,9 @@ const ProductForm = (props) => {
                         type="text"
                         onChange={(e) => setTitle(e.target.value)}
                         value={title} />
-                    {/* {allErrors ? <p style={{ color: 'red' }}>{allErrors.title.message}</p> : ''} */}
-                    {/* {<p style={{ color: 'red' }}>{allErrors.title.message}</p>} */}
+                    {allErrors.title ?
+                        <p style={{ color: 'red' }}>{allErrors.title.message}</p> : ''
+                    }
                 </p>
                 <p>
                     <label>Price</label><br />
@@ -32,6 +37,9 @@ const ProductForm = (props) => {
                         type="text"
                         onChange={(e) => setPrice(e.target.value)}
                         value={price} />
+                    {allErrors.price ?
+                        <p style={{ color: 'red' }}>{allErrors.price.message}</p> : ''
+                    }
                 </p>
                 <p>
                     <label>Descriptione</label><br />
@@ -39,6 +47,9 @@ const ProductForm = (props) => {
                         type="text"
                         onChange={(e) => setDescription(e.target.value)}
                         value={description} />
+                    {allErrors.description ?
+                        <p style={{ color: 'red' }}>{allErrors.description.message}</p> : ''
+                    }
                 </p>
                 <input type="submit" />
             </form>

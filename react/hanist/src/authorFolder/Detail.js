@@ -6,7 +6,10 @@ const Detail = props => {
     const [author, setAuthor] = useState({})
     useEffect(() => {
         axios.get("http://localhost:8000/api/author/" + props.id)
-            .then(res => setAuthor(res.data))
+            .then(res => {
+                console.log("useEffect inside Detail.js");
+                setAuthor(res.data);
+            })
     }, [props.id])
     return (
         <div>

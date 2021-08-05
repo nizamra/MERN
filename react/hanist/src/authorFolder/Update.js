@@ -12,6 +12,7 @@ const Update = props => {
     useEffect(() => {
         axios.get('http://localhost:8000/api/author/' + id)
             .then(res => {
+                console.log("useEffect inside Update.js");
                 setAuthor(res.data);
                 setLoaded(true);
             })
