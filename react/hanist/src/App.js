@@ -1,15 +1,17 @@
-import './App.css';
-import React from 'react';
-import { Router } from '@reach/router';
-import Chat from './Chat';
-import Main from './Main';
-import Detail from './Detail';
-import Update from './Update';
-import Origin from './Original';
+import './App.css'
+import React from 'react'
+import { Router } from '@reach/router'
+import Chat from './chatfolder/Chat'
+import Main from './Main'
+import Detail from './Detail'
+import Update from './Update'
+import Origin from './Original'
 
-import MainAuthor from './authorFolder/Main';
-import DetailAuthor from './authorFolder/Detail';
-import UpdateAuthor from './authorFolder/Update';
+import MainAuthor from './authorFolder/Main'
+import DetailAuthor from './authorFolder/Detail'
+import UpdateAuthor from './authorFolder/Update'
+
+import LalaChat from './chatfolder/LalaChat'
 
 function App() {
 
@@ -36,6 +38,7 @@ function App() {
         <UpdateAuthor path="author/:id/edit" />
 
         <Chat path="/chat" />
+        <LalaChat path="/lala" />
       </Router>
 
       <h3>End Main XxX</h3>

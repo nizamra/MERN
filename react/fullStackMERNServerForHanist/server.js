@@ -11,13 +11,18 @@ const server = app.listen(8000, () =>
 );
 
 const io = require('socket.io')(server, { cors: true });
+var clients = {}
 
-io.on("connection", socket => {
-    console.log("Nice to meet you. (shake hand)");
-    console.log(socket.id);
-    socket.emit("sendingDataToOthers", "Welcoming Reem Ismail");
-    // socket.on("clientevent", data => {
-    //     socket.broadcast.emet("sendingDataToOthers", data);
-    // });
-});
-
+io.on('connection', socket => {
+  clients[socket.id] = socket;
+//   console.log(socket);
+  console.log(socket.id);
+  socket.on('message', ({ name, message }) => {
+    io.emit('message', { name, message })
+  })
+  socket.on('disconnect', function() {
+    delete clients[socket.id];
+    console.clear();
+    console.log("deleted user id is : ["+socket.id+"]" );
+})
+})
