@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import Papa from './PersonForm';
+import Papa from '../personFolder/PersonForm';
 import Mama from './ProductForm';
-import AllProds from './ProductsList';
+import AllProds from '../views/ProductsList';
 
 const Main = () => {
     const [products, setProducts] = useState([]);
@@ -14,12 +14,8 @@ const Main = () => {
             .then(res => {
                 setProducts(res.data);
                 setLoaded(true);
-                console.log("Main Methods are Effective");
-                console.log(res.data);
-                console.log("inside main");
-                console.log(errors);
             });
-    })
+    }, [])
 
     const removeFromDom = productId => {
         setProducts(products.filter(product => product._id !== productId));
@@ -30,14 +26,9 @@ const Main = () => {
             .then(res => {
                 setProducts([...products, res.data]);
                 setErrors({ title: "", price: "", description: "" });
-                console.log("Fully Completed");
             })
             .catch(err => {
-                console.log("Error inside creation function");
-                console.log(errors);
                 setErrors(err.response.data.errors);
-                console.log("after setting");
-                console.log(errors);
             })
     }
 

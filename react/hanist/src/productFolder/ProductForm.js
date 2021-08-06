@@ -15,8 +15,7 @@ const ProductForm = (props) => {
         setPrice("");
         setDescription("");
     }
-    console.log("allErrors inside the form");
-    console.log(allErrors);
+
     return (
         <>
             <h2>Product Manager</h2>

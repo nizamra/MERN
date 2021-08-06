@@ -20,9 +20,9 @@ const AuthorsList = (props) => {
 
             {authors.map((author, idx) => {
                 return (
-                    <>
-                        <Paper elevation={8} key={idx}>
-                            <p>
+                    <div key={idx}>
+                        <Paper elevation={8} >
+                            <div>
                                 Name:<Link to={`/author/${author._id}`}>
                                     {author.name}
                                 </Link>
@@ -33,9 +33,9 @@ const AuthorsList = (props) => {
                                 </Link>
 
                                 <DeleteButton authorId={author._id} successCallback={() => removeFromDom(author._id)} />
-                            </p>
+                            </div>
                         </Paper>
-                    </>
+                    </div>
                 )
             })}
         </div>

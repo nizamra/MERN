@@ -1,6 +1,6 @@
 import { Link } from '@reach/router';
 import React from 'react'
-import DeleteButton from './DeleteButton';
+import DeleteButton from '../productFolder/DeleteButton';
 import { Button } from '@material-ui/core';
 import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 
