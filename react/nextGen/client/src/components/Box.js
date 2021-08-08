@@ -1,11 +1,12 @@
 import React from 'react'
 import ListItem from './ListItem';
 const Box = (props) => {
-    const { data } = props;
+    const { data, header } = props;
     const boxStyle = {
-        width: "300px",
-        height: "300px",
+        width: "250px",
+        height: "360px",
         border: "2px solid black",
+        overflow: "scroll",
         margin: "10px"
 
     }
@@ -15,23 +16,25 @@ const Box = (props) => {
         margin: "10px"
     }
     const buttonStyle = {
-        width: "250px"
+        width: "200px"
     }
-
+    // { taskName, status, dueDate }
     const getText = (value) => {
         return value.status === "toDo"
-                ? "Start Doing"
-                : value.status === "doning" ? "Done with This Task" : "Remove Task"
+                ? "Start Project"
+                : value.status === "doning" ? "Move to Complete" : "Remove Project"
     }
 
     return (
         <div style={boxStyle}>
+        <h3>{header}</h3>
             {
                 data.map((value, index) => {
                     return (
                         <ListItem 
                             data={value} 
                             header={value.taskName} 
+                            datem={value.dueDate} 
                             key={index} 
                             listStyle={taskBox} 
                             buttonCallBack={(e) => props.callBack(e, value)} 

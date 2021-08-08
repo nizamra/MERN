@@ -18,17 +18,17 @@ module.exports.getAllTasks = (request, response) => {
         .catch(err => response.status(400).json(err))
 }
 module.exports.getBacklog = (request, response) => {
-    Task.find({status:"backlog"})
+    Task.find({status:"toDo"})
         .then(tasks => response.json(tasks))
         .catch(err => response.status(400).json(err))
 }
 module.exports.getProgress = (request, response) => {
-    Task.find({status:"progress"})
+    Task.find({status:"doning"})
         .then(tasks => response.json(tasks))
         .catch(err => response.status(400).json(err))
 }
 module.exports.getComplete = (request, response) => {
-    Task.find({status:"complete"})
+    Task.find({status:"done"})
         .then(tasks => response.json(tasks))
         .catch(err => response.status(400).json(err))
 }
@@ -40,7 +40,8 @@ module.exports.getTask = (request, response) => {
 }
 
 module.exports.updateTask = (request, response) => {
-    Task.findOneAndUpdate({_id: request.params.id}, request.body, {new:true, runValidators:true})
+    // Task.findOneAndUpdate({_id: request.params.id}, request.body, {new:true, runValidators:true})
+    Task.findOneAndUpdate({_id: request.params.id}, request.body)
         .then(updatedTask => response.json(updatedTask))
         .catch(err => response.status(400).json(err))
 }

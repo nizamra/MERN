@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import Button from './Button'
+import { Link } from '@reach/router';
+
 
 const Input = (props) => {
     const { initialTask, allErrors, initialDueDate, addNewTask } = props;
     const [taskName, setTask] = useState(initialTask);
-    const [status, setStatus] = useState("backlog");
+    const [status, setStatus] = useState("toDo");
     const [dueDate, setDueDate] = useState(initialDueDate);
     const [nameError, setNameError] = useState("Your Task must be at least 3 charcter long");
 
@@ -15,12 +17,12 @@ const Input = (props) => {
         setDueDate("");
     }
     // const [newTask, setNewTask] = useState("")
-    
+
 
 
     const validatingName = (e) => {
         setTask(e.target.value)
-        if(e.target.value.length > 2 ) {
+        if (e.target.value.length > 2) {
             setNameError("")
             // setallErrors.taskName.message("")
         }
@@ -30,8 +32,10 @@ const Input = (props) => {
     }
     return (
         <div>
-        <form onSubmit={onSubmitHandler}>
-            <h2>Product Manager</h2>
+            <Link to={'/'}>
+                Back to Dashboard
+            </Link>
+            <form onSubmit={onSubmitHandler}>
                 <p>
                     <label>Project:  </label>
                     <input
@@ -39,7 +43,7 @@ const Input = (props) => {
                         onChange={validatingName}
                         // onChange={(e) => setTask(e.target.value)}
                         value={taskName} /><br />
-                        {nameError}
+                    {nameError}
                     {allErrors.taskName ?
                         <p style={{ color: 'red' }}>{allErrors.taskName.message}</p> : ''
                     }
@@ -48,7 +52,7 @@ const Input = (props) => {
                     <input
                         type="hidden"
                         onChange={(e) => setStatus(e.target.value)}
-                        value="backlog" />
+                        value="toDo" />
                 </p>
                 <p>
                     <label>DueDate </label>
@@ -60,9 +64,9 @@ const Input = (props) => {
                         <p style={{ color: 'red' }}>{allErrors.dueDate.message}</p> : ''
                     }
                 </p>
-                <Button 
+                <Button
                     text="Plan project"
-                    isDisabled={taskName.length < 6 ? true : false}
+                    isDisabled={taskName.length < 3 ? true : false}
                 />
             </form>
         </div>
