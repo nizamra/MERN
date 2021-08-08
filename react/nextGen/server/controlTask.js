@@ -2,12 +2,8 @@ const { Task } = require('./modelTask');
 
 module.exports.createTask = (request, response) => {
     const { taskName, status, dueDate } = request.body;
-    console.log(taskName)
-    console.log(status)
-    console.log(dueDate)
     Task.create({taskName, status, dueDate})
         .then(task => {
-        console.log(taskName)
         response.json(task)})
         .catch(err => {response.status(400).json(err);});
 }
@@ -18,17 +14,17 @@ module.exports.getAllTasks = (request, response) => {
         .catch(err => response.status(400).json(err))
 }
 module.exports.getBacklog = (request, response) => {
-    Task.find({status:"toDo"})
+    Task.find({status:"toDo"}).sort( { "dueDate": 1 } )
         .then(tasks => response.json(tasks))
         .catch(err => response.status(400).json(err))
 }
 module.exports.getProgress = (request, response) => {
-    Task.find({status:"doning"})
+    Task.find({status:"doning"}).sort( { "dueDate": 1 } )
         .then(tasks => response.json(tasks))
         .catch(err => response.status(400).json(err))
 }
 module.exports.getComplete = (request, response) => {
-    Task.find({status:"done"})
+    Task.find({status:"done"}).sort( { "dueDate": 1 } )
         .then(tasks => response.json(tasks))
         .catch(err => response.status(400).json(err))
 }
