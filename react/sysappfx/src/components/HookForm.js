@@ -11,7 +11,7 @@ const HookForm = () => {
 
     const fastPrint = (df) => {
         df.preventDefault();
-        const newUser = { FirstName, LastName, email, password };
+        // const newUser = { FirstName, LastName, email, password };
         setFirstName("");
         setLastName("");
         setEmail("");

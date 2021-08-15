@@ -1,17 +1,17 @@
 import React from 'react';
-    
-    
-class MyNewComponent extends React.Component{
-    render(){
-        return(
-            <div>
+
+
+class MyNewComponent extends React.Component {
+    render() {
+        return (
+            <fieldset>
                 <h1>
-                    { this.props.header }
+                    {this.props.header}
                 </h1>
-                { this.props.children }
-            </div>
+                {this.props.children}
+            </fieldset>
         );
     }
 }
-    
+
 export default MyNewComponent;
